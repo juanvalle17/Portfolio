@@ -1,0 +1,139 @@
+---
+// Componente Cursos y Certificaciones
+---
+
+<section id="cursos" class="py-20">
+    <div class="container mx-auto px-6">
+        <div class="flex items-center justify-center gap-3 mb-16">
+			<svg class="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+			<h2 class="text-3xl font-semibold text-white">
+				Cursos y Certificaciones
+			</h2>
+		</div>
+
+        <!-- Timeline de Cursos -->
+        <div class="relative max-w-4xl mx-auto">
+            <!-- Línea vertical de tiempo -->
+            <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-600"></div>
+            
+            <!-- Entrada 1 -->
+            <div class="relative flex items-start mb-12">
+                <!-- Punto de la línea de tiempo -->
+                <div class="absolute left-6 w-4 h-4 bg-yellow-400 rounded-full border-4 border-gray-900 z-10"></div>
+                
+                <!-- Contenido -->
+                <div class="ml-16 flex-1">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Columna izquierda - Título y fechas -->
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold text-yellow-400">
+                                Intermediate Python for Developers
+                            </h3>
+                            <p class="text-white font-medium">
+                                DataCamp
+                            </p>
+                            <p class="text-gray-300 text-sm">
+                                Agosto 2025
+                            </p>
+                        </div>
+                        
+                        <!-- Columna derecha - Descripción -->
+                        <div class="md:col-span-2">
+                            <p class="text-white leading-relaxed">
+                                Curso completo de Python intermedio para desarrolladores. Incluye programación orientada a objetos, 
+                                manejo de datos, y desarrollo de aplicaciones con Python. Proyectos prácticos y aplicaciones reales.
+                            </p>
+                            <a 
+                                href="#" 
+                                class="inline-flex items-center text-yellow-400 hover:text-yellow-300 mt-3 text-sm font-medium cursor-pointer"
+                                onclick="openCertificateModal('intermediate-python'); return false;"
+                            >
+                                Ver certificado >
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrada 2 -->
+            <div class="relative flex items-start mb-12">
+                <!-- Punto de la línea de tiempo -->
+                <div class="absolute left-6 w-4 h-4 bg-yellow-400 rounded-full border-4 border-gray-900 z-10"></div>
+                
+                <!-- Contenido -->
+                <div class="ml-16 flex-1">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Columna izquierda - Título y fechas -->
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold text-yellow-400">
+                                Introduction to Python for Developers
+                            </h3>
+                            <p class="text-white font-medium">
+                                DataCamp
+                            </p>
+                            <p class="text-gray-300 text-sm">
+                                Agosto 2025
+                            </p>
+                        </div>
+                        
+                        <!-- Columna derecha - Descripción -->
+                        <div class="md:col-span-2">
+                            <p class="text-white leading-relaxed">
+                                Curso de introducción a Python para desarrolladores. 
+                                Incluye fundamentos de Python, sintaxis básica, estructuras de datos 
+                                y programación funcional.
+                            </p>
+                            <a 
+                                href="#" 
+                                class="inline-flex items-center text-yellow-400 hover:text-yellow-300 mt-3 text-sm font-medium cursor-pointer"
+                                onclick="openCertificateModal('introduction-python'); return false;"
+                            >
+                                Ver certificado >
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrada 3 -->
+            <div class="relative flex items-start mb-12">
+                <!-- Punto de la línea de tiempo -->
+                <div class="absolute left-6 w-4 h-4 bg-yellow-400 rounded-full border-4 border-gray-900 z-10"></div>
+                
+                <!-- Contenido -->
+                <div class="ml-16 flex-1">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Columna izquierda - Título y fechas -->
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold text-yellow-400">
+                                Programador
+                            </h3>
+                            <p class="text-white font-medium">
+                                Ministerio de Educación de la Provincia de Córdoba
+                            </p>
+                            <p class="text-gray-300 text-sm">
+                                Abril 2024
+                            </p>
+                        </div>
+                        
+                        <!-- Columna derecha - Descripción -->
+                        <div class="md:col-span-2">
+                            <p class="text-white leading-relaxed">
+                                Certificación en programación del Ministerio de Educación de Córdoba. 
+                                Demuestra competencia en desarrollo de software, algoritmos, estructuras de datos 
+                                y metodologías de programación.
+                            </p>
+                            <a 
+                                href="#" 
+                                class="inline-flex items-center text-yellow-400 hover:text-yellow-300 mt-3 text-sm font-medium cursor-pointer"
+                                onclick="openCertificateModal('programador'); return false;"
+                            >
+                                Ver certificado >
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

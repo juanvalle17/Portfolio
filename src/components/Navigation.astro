@@ -1,0 +1,114 @@
+---
+// Componente de navegación
+---
+
+
+<nav class="flex justify-center py-4 fixed top-0 left-0 right-0 z-50">
+	<div class="flex items-center justify-center rounded-full border border-white/10 bg-gray-800 shadow-lg shadow-black/30 px-4">
+		<!-- Enlaces de navegación -->
+		<div class="hidden md:flex items-center space-x-10 fit-content py-2.5 px-6 text-sm font-normal">
+			<a href="#inicio" class="text-gray-300 hover:text-white transition-colors duration-200">
+				Inicio
+			</a>
+			<a href="#sobre-mi" class="text-gray-300 hover:text-white transition-colors duration-200">
+				Sobre Mí
+			</a>
+			<a href="#educacion" class="text-gray-300 hover:text-white transition-colors duration-200">
+				Educación
+			</a>
+			<a href="#cursos" class="text-gray-300 hover:text-white transition-colors duration-200">
+				Cursos
+			</a>
+			<a href="#habilidades" class="text-gray-300 hover:text-white transition-colors duration-200">
+				Habilidades
+			</a>
+			<a href="#proyectos" class="text-gray-300 hover:text-white transition-colors duration-200">
+				Proyectos
+			</a>
+			<a href="#contacto" class="text-gray-300 hover:text-white transition-colors duration-200">
+				Contacto
+			</a>
+		</div>
+		
+		<!-- Menú móvil -->
+		<button id="mobile-menu-btn" class="md:hidden text-white p-2">
+			<svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+			</svg>
+			<svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+			</svg>
+		</button>
+	</div>
+	
+	<!-- Menú móvil desplegable -->
+	<div id="mobile-menu" class="fixed top-20 left-4 right-4 bg-gray-800 rounded-2xl border border-white/10 shadow-lg shadow-black/30 z-40 hidden">
+		<div class="py-4 px-6 space-y-4">
+			<a href="#inicio" class="block text-gray-300 hover:text-white transition-colors duration-200 py-2">
+				Inicio
+			</a>
+			<a href="#sobre-mi" class="block text-gray-300 hover:text-white transition-colors duration-200 py-2">
+				Sobre Mí
+			</a>
+			<a href="#educacion" class="block text-gray-300 hover:text-white transition-colors duration-200 py-2">
+				Educación
+			</a>
+			<a href="#cursos" class="block text-gray-300 hover:text-white transition-colors duration-200 py-2">
+				Cursos
+			</a>
+			<a href="#habilidades" class="block text-gray-300 hover:text-white transition-colors duration-200 py-2">
+				Habilidades
+			</a>
+			<a href="#proyectos" class="block text-gray-300 hover:text-white transition-colors duration-200 py-2">
+				Proyectos
+			</a>
+			<a href="#contacto" class="block text-gray-300 hover:text-white transition-colors duration-200 py-2">
+				Contacto
+			</a>
+		</div>
+	</div>
+</nav>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+		const mobileMenu = document.getElementById('mobile-menu');
+		const menuIcon = document.getElementById('menu-icon');
+		const closeIcon = document.getElementById('close-icon');
+		
+		if (mobileMenuBtn && mobileMenu && menuIcon && closeIcon) {
+			mobileMenuBtn.addEventListener('click', function() {
+				const isHidden = mobileMenu.classList.contains('hidden');
+				
+				if (isHidden) {
+					mobileMenu.classList.remove('hidden');
+					menuIcon.classList.add('hidden');
+					closeIcon.classList.remove('hidden');
+				} else {
+					mobileMenu.classList.add('hidden');
+					menuIcon.classList.remove('hidden');
+					closeIcon.classList.add('hidden');
+				}
+			});
+			
+			// Cerrar menú al hacer click en un enlace
+			const mobileLinks = mobileMenu.querySelectorAll('a');
+			mobileLinks.forEach(link => {
+				link.addEventListener('click', function() {
+					mobileMenu.classList.add('hidden');
+					menuIcon.classList.remove('hidden');
+					closeIcon.classList.add('hidden');
+				});
+			});
+			
+			// Cerrar menú al hacer click fuera
+			document.addEventListener('click', function(e) {
+				if (!mobileMenuBtn.contains(e.target as Node) && !mobileMenu.contains(e.target as Node)) {
+					mobileMenu.classList.add('hidden');
+					menuIcon.classList.remove('hidden');
+					closeIcon.classList.add('hidden');
+				}
+			});
+		}
+	});
+</script>
